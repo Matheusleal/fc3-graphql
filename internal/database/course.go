@@ -43,7 +43,7 @@ func (c *Course) FindAll() ([]Course, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer c.db.Close()
+	defer rows.Close()
 
 	courses := []Course{}
 
@@ -67,7 +67,7 @@ func (c *Course) FindByCategoryId(categoryId string) ([]Course, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer c.db.Close()
+	defer rows.Close()
 
 	courses := []Course{}
 
